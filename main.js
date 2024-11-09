@@ -1,4 +1,6 @@
-import './style.css'
+import "./src/index.css";
+import { App } from './src/App';
+
 
 
 const root = document.getElementById("app");
