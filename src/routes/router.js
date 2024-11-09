@@ -1,5 +1,6 @@
 import Navigo from "navigo";
 import starter from "../pages/starter";
+import welcome from "../pages/welcome";
 
 export const router = new Navigo("/");
 
@@ -10,13 +11,13 @@ const changeContents = (target) => {
 };
 
 
-export const Router = () => {
   router
     .on("/", () => {
       changeContents(starter);
+    }) .on("/welcome", () => {
+      changeContents(welcome);
     })
    
 
-  router.resolve();
-  return router;
-};
+    // router.resolve();
+
