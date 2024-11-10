@@ -1,8 +1,10 @@
 import Navigo from "navigo";
-import starter from "../pages/starter";
-import welcome from "../pages/welcome";
+import starter from "../pages/starterOnboarding";
+
 import swiper1 from "../pages/swipper/swiper1";
 import swiper2 from "../pages/swipper/swiper2";
+import swiper3 from "../pages/swipper/swipper3";
+import welcome from "../pages/welcomeOnboarding";
 
 export const router = new Navigo("/");
 
@@ -24,6 +26,8 @@ const changeContents = (target) => {
     }) 
     .on("/swiper2", () => {
       changeContents(swiper2);
+    }) .on("/swiper3", () => {
+      changeContents(swiper3);
     }) 
 
     // router.resolve();
