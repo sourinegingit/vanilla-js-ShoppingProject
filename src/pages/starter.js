@@ -4,8 +4,8 @@ import { router } from "../routes/router";
 const starter = () => {
   setTimeout(() => {
     router.navigate("/welcome");
-    console.log("settimeout");
-  }, 1000);
+    // console.log("settimeout");
+  }, 3000);
   return El({
     element: "div",
     id: "starter",
@@ -14,7 +14,7 @@ const starter = () => {
       El({
         element: "img",
         id: "img-starter",
-        className: "mt-[394px]",
+        className: "mt-[200px]",
         src: "./src/images/logo/shoea.png",
         // onclick: () => {
         //   Router().navigate("/welcome");
@@ -23,7 +23,7 @@ const starter = () => {
       El({
         element: "img",
         id: "img-starter",
-        className: "w-[48px] h-[48px] mb-[117px]",
+        className: "w-[48px] h-[48px] mb-[180px]",
         src: "./src/images/loading/1.gif",
       }),
     ],
