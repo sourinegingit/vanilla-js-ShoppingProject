@@ -1,4 +1,5 @@
 import { El } from "../el/El";
+import { router } from "../routes/router";
 export const welcome = () => {
   return El({
     element: "div",
@@ -15,10 +16,9 @@ export const welcome = () => {
       El({
         element: "img",
         className: "absolute",
-        // onclick: () => {
-        //   //   Router().navigate("/swiper1");
-        //     router.navigate("/swiper1");
-        //   },
+        onclick: () => {
+            router.navigate("/swiper1");
+          },
         src: "./src/images/assets/inner-dark.png",
       }),
       El({
