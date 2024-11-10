@@ -34,7 +34,7 @@ export const swiper3 = () => {
             element: "button",
             className: "w-full bg-gray-700 text-white rounded-full p-2 mt-1",
             onclick: () => {
-              router.navigate("/swiper3");
+              router.navigate("/login");
             },
             children: ["Next"],
           }),
