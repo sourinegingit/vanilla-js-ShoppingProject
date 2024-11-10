@@ -5,7 +5,7 @@ export const swiper1 = () => {
     element: "div",
     id: "swiper1",
     className:
-      "w-[415px] h-[700px] overflow-y-hidden flex flex-col items-center",
+      "w-[415px] border  border-black h-[700px] overflow-y-hidden flex flex-col items-center",
     children: [
       El({
         element: "img",
