@@ -58,10 +58,7 @@ const autoLogin = () => {
       });
   }
 };
-autoLogin()
-
-
-
+autoLogin();
 
 // const autoLogin = async () => {
 //   const email = localStorage.getItem("email");
@@ -83,6 +80,5 @@ autoLogin()
 // };
 
 // autoLogin();
-
 
 export default loginData;
