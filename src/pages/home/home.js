@@ -88,8 +88,9 @@ export const home = () => {
       El({
         element: "div",
         id: "search-brand",
-        className: "p-[24px] top-[80px] fixed w-[414px] bg-gray-400 z-12",
+        className: "p-[24px] top-[80px] fixed w-[414px] bg-white z-12",
         children: [
+          // search input
           El({
             element: "div",
             className: "",
@@ -111,6 +112,7 @@ export const home = () => {
               }),
             ],
           }),
+          // div 1 brand
           El({
             element: "div",
             className: "mt-[20px]",
@@ -176,16 +178,16 @@ export const home = () => {
                       }),
                     ],
                   }),
-
+                  // end adidas
                   El({
                     element: "div",
                     className: "flex flex-col justify-center items-center",
                     children: [
                       El({
                         element: "button",
-                        onclick: () => {
-                          Router().navigate("/puma");
-                        },
+                        // onclick: () => {
+                        //   Router().navigate("/puma");
+                        // },
                         className:
                           "w-[60px] h-[60px] rounded-full bg-gray-200 flex justify-center items-center",
                         children: [
@@ -203,16 +205,16 @@ export const home = () => {
                       }),
                     ],
                   }),
-
+                  // end puma
                   El({
                     element: "div",
                     className: "flex flex-col justify-center items-center",
                     children: [
                       El({
                         element: "button",
-                        onclick: () => {
-                          Router().navigate("/asics");
-                        },
+                        // onclick: () => {
+                        //   Router().navigate("/asics");
+                        // },
                         className:
                           "w-[60px] h-[60px] rounded-full bg-gray-200 flex justify-center items-center",
                         children: [
@@ -230,10 +232,206 @@ export const home = () => {
                       }),
                     ],
                   }),
+
+                  // end asics
                 ],
               }),
             ],
           }),
+          // div 2 brand
+          El({
+            element: "div",
+            className: "mt-[25px]",
+            children: [
+              El({
+                element: "div",
+                className: "flex justify-between",
+                children: [
+                  El({
+                    element: "div",
+                    className: "flex flex-col items-center justify-center",
+                    children: [
+                      El({
+                        element: "button",
+                        // onclick: () => {
+                        //     Router().navigate("/reebok");
+                        //   },
+                        className:
+                          "w-[60px] h-[60px] rounded-full bg-gray-200 flex justify-center items-center",
+                        children: [
+                          El({
+                            element: "img",
+                            className: "",
+                            src: "../../src/images/brand/reebok.png",
+                          }),
+                        ],
+                      }),
+                      El({
+                        element: "p",
+                        className: "font-[600] text-[14px] mt-2",
+                        children: ["Reebok"],
+                      }),
+                    ],
+                  }),
+                  //   end rebook
+                  El({
+                    element: "div",
+                    className: "flex flex-col justify-center items-center",
+                    children: [
+                      El({
+                        element: "button",
+                        // onclick: () => {
+                        //   Router().navigate("/newbalance");
+                        // },
+                        className:
+                          "w-[60px] h-[60px] rounded-full bg-gray-200 flex justify-center items-center",
+                        children: [
+                          El({
+                            element: "img",
+                            className: "",
+                            src: "../../src/images/brand/newbalance.png",
+                          }),
+                        ],
+                      }),
+                      El({
+                        element: "p",
+                        className: "font-[600] text-[14px] mt-2",
+                        children: ["New Ba.."],
+                      }),
+                    ],
+                  }),
+                  //   end new balance
+                  El({
+                    element: "div",
+                    className: "flex flex-col justify-center items-center",
+                    children: [
+                      El({
+                        element: "button",
+                        // onclick: () => {
+                        //   Router().navigate("/converse");
+                        // },
+                        className:
+                          "w-[60px] h-[60px] rounded-full bg-gray-200 flex justify-center items-center",
+                        children: [
+                          El({
+                            element: "img",
+                            className: "",
+                            src: "../../src/images/brand/converse.png",
+                          }),
+                        ],
+                      }),
+                      El({
+                        element: "p",
+                        className: "font-[600] text-[14px] mt-2",
+                        children: ["Converse"],
+                      }),
+                    ],
+                  }),
+                  //   end convers
+                  El({
+                    element: "div",
+                    className: "flex flex-col justify-center items-center",
+                    children: [
+                      El({
+                        element: "button",
+                        className:
+                          "w-[60px] h-[60px] rounded-full bg-gray-200 flex justify-center items-center",
+                        children: [
+                          El({
+                            element: "img",
+                            className: "",
+                            src: "../../src/images/brand/more.png",
+                          }),
+                        ],
+                      }),
+                      El({
+                        element: "p",
+                        className: "font-[600] text-[14px] mt-2",
+                        children: ["More.."],
+                      }),
+                    ],
+                  }),
+                  //   end more
+                ],
+              }),
+            ],
+          }),
+
+        //   stast most popular
+          El({
+            element: "div",
+            className: "mt-[20px] flex justify-between items-center",
+            children: [
+              El({
+                element: "p",
+                className: "font-[600] text-[20px]",
+                children: ["Most Popular"],
+              }),
+              El({
+                element: "button",
+                className: "font-[600] text-[16px]",
+                children: ["See All"],
+                // onclick: () => {
+                //   Router().navigate("/seeall");
+                // },
+              }),
+            ],
+          }),
+// popular button
+El({
+    element:"div",
+    className:"flex mt-[20px] gap-[12px] overflow-x-scroll scrollbar-hidden",
+    children: [
+        El({
+          element: "button",
+          className:
+            "h-[39px] py-[10px] px-[20px] bg-gray-700 text-white rounded-full flex justify-center items-center",
+          children: ["All"],
+        }),
+        El({
+          element: "button",
+          className:
+            "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
+          children: ["Nike"],
+        }),
+        El({
+          element: "button",
+          className:
+            "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
+          children: ["Adidias"],
+        }),
+        El({
+          element: "button",
+          className:
+            "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
+          children: ["Puma"],
+        }),
+        El({
+          element: "button",
+          className:
+            "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
+          children: ["Asics"],
+        }),
+        El({
+          element: "button",
+          className:
+            "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
+          children: ["Reebok"],
+        }),
+        El({
+          element: "button",
+          className:
+            "h-[39px] px-[20px]  text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
+          children: ["NewBalance"],
+        }),
+        El({
+          element: "button",
+          className:
+            "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
+          children: ["Converse"],
+        }),
+      ],
+})
 
           //   -----------
         ],
