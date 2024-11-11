@@ -16,7 +16,15 @@ const changeContents = (target) => {
   root.append(target());
 };
 
-
+const changeContents2 = (target, item) => {
+  // console.log(item);
+  target(item).then((res) => {
+    const root = document.getElementById("rootsEl");
+    root.innerHTML = "";
+    // console.log(res);
+    root.append(res);
+  });
+};
   router
     .on("/", () => {
       changeContents(starter);
@@ -35,6 +43,8 @@ const changeContents = (target) => {
       changeContents(login);
     })   .on("/home", () => {
       changeContents(home);
+      changeContents2(home);
+
     }) 
 
     // router.resolve();
