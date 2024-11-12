@@ -1,3 +1,4 @@
+import { router } from "../../routes/router";
 import getProducts from "../../api/getProducts";
 import { El } from "../../el/El";
 
@@ -165,9 +166,9 @@ export const home = async () => {
                       children: [
                         El({
                           element: "button",
-                          // onclick: () => {
-                          //     Router().navigate("/nike");
-                          //   },
+                          onclick: () => {
+                              router.navigate("/nike");
+                            },
                           className:
                             "w-[60px] h-[60px] bg-gray-200 rounded-full flex justify-center items-center",
                           children: [
