@@ -1,15 +1,10 @@
 import getProducts from "../../api/getProducts";
 import { El } from "../../el/El";
 
-export const home =async  () => {
-
-
+export const home = async () => {
   try {
-
     const data = await getProducts(); // directly get products without destructuring
-console.log(data);
-
-
+    // console.log(data);
 
     return El({
       element: "div",
@@ -99,7 +94,8 @@ console.log(data);
         El({
           element: "div",
           id: "search-brand",
-          className: "p-[24px] fixed -mt-[155px]  w-[414px] bg-white z-10 overflow-y-sroll scrollbar-hidden",
+          className:
+            "p-[24px] fixed -mt-[255px]  w-[414px] bg-white z-10 overflow-y-sroll scrollbar-hidden",
           children: [
             // search input
             El({
@@ -496,7 +492,6 @@ console.log(data);
               ],
             });
           }),
-      
         }),
         // El({
         //   element: "div",
