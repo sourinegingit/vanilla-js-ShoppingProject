@@ -8,6 +8,12 @@ import welcome from "../pages/welcomeOnboarding";
 import login from "../pages/login/login";
 import home from "../pages/home/home";
 import adidas from "../pages/filter/adidas";
+import asics from "../pages/filter/asics";
+import nike from "../pages/filter/nike";
+import converse from "../pages/filter/converse";
+import newbalance from "../pages/filter/newbalance";
+import puma from "../pages/filter/puma";
+import reebok from "../pages/filter/reebok";
 
 export const router = new Navigo("/");
 
@@ -51,6 +57,21 @@ router
   })
   .on("/adidas", () => {
     changeContents2(adidas);
+  })
+  .on("/asics", () => {
+    changeContents2(asics);
+  })
+  .on("/nike", () => {
+    changeContents2(nike);
+  })
+  .on("/converse", () => {
+    changeContents2(converse);
+  }) .on("/newbalance", () => {
+    changeContents2(newbalance);
+  }) .on("/puma", () => {
+    changeContents2(puma);
+  }) .on("/reebok", () => {
+    changeContents2(reebok);
   })
 
 // router.resolve();
