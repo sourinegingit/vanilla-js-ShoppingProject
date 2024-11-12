@@ -1,6 +1,7 @@
 import { router } from "../../routes/router";
 import getProducts from "../../api/getProducts";
 import { El } from "../../el/El";
+import productDetail from "../productDetail/productDetail";
 
 export const home = async () => {
   try {
@@ -456,10 +457,12 @@ export const home = async () => {
             return El({
               element: "div",
               id: `${item.id}`,
-              // onclick: () => {
-              //   // productModal({ id: item.id });
-              //   Router().navigate(`/product/${item.id}`);
-              // },
+              onclick: () => {
+               router.navigate("/productDetail")
+                // productDetail({ id: item.id });
+                // Router().navigate(`/product/${item.id}`);
+                // router.navigate(`/product/${item.id}`)
+              },
               className: "",
               children: [
                 El({

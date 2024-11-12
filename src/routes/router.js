@@ -14,6 +14,8 @@ import converse from "../pages/filter/converse";
 import newbalance from "../pages/filter/newbalance";
 import puma from "../pages/filter/puma";
 import reebok from "../pages/filter/reebok";
+import productDetail from "../pages/productDetail/productDetail";
+// import productDetail from "../pages/productDetail/productDetail";
 
 export const router = new Navigo("/");
 
@@ -73,5 +75,7 @@ router
   }) .on("/reebok", () => {
     changeContents2(reebok);
   })
-
+.on("/productDetail",()=>{
+  changeContents(productDetail)
+})
 // router.resolve();
