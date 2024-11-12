@@ -96,7 +96,7 @@ export const home = async () => {
           element: "div",
           id: "search-brand",
           className:
-            "p-[24px] fixed -mt-[255px]  w-[414px] bg-white z-10 overflow-y-sroll scrollbar-hidden",
+            "p-[24px] fixed -mb-[472px]  w-[414px] bg-white z-10 overflow-y-sroll scrollbar-hidden",
           children: [
             // search input
             El({
@@ -167,7 +167,7 @@ export const home = async () => {
                         El({
                           element: "button",
                           onclick: () => {
-                              router.navigate("/nike");
+                              router.navigate("/adidas");
                             },
                           className:
                             "w-[60px] h-[60px] bg-gray-200 rounded-full flex justify-center items-center",
@@ -451,7 +451,7 @@ export const home = async () => {
           element: "div",
           id: "products-home",
           className:
-            "p-[24px] bg-gray-400 absolute w-[414px] top-[480px] flex flex-wrap justify-center gap-4 overflow-y-scroll no-scrollbar ",
+            "p-[14px] bg-gray-400 absolute w-[414px] top-[480px] flex flex-wrap justify-center gap-4 overflow-y-scroll no-scrollbar ",
           children: data.map((item) => {
             return El({
               element: "div",

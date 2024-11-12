@@ -7,6 +7,7 @@ import swiper3 from "../pages/swipper/swipper3";
 import welcome from "../pages/welcomeOnboarding";
 import login from "../pages/login/login";
 import home from "../pages/home/home";
+import adidas from "../pages/filter/adidas";
 
 export const router = new Navigo("/");
 
@@ -25,27 +26,31 @@ const changeContents2 = (target, item) => {
     root.append(res);
   });
 };
-  router
-    .on("/", () => {
-      changeContents(starter);
-    }) .on("/welcome", () => {
-      changeContents(welcome);
-    })
-    .on("/swiper1", () => {
-      changeContents(swiper1);
-    }) 
-    .on("/swiper2", () => {
-      changeContents(swiper2);
-    }) .on("/swiper3", () => {
-      changeContents(swiper3);
-    }) 
-    .on("/login", () => {
-      changeContents(login);
-    })   .on("/home", () => {
-      changeContents(home);
-      changeContents2(home);
+router
+  .on("/", () => {
+    changeContents(starter);
+  })
+  .on("/welcome", () => {
+    changeContents(welcome);
+  })
+  .on("/swiper1", () => {
+    changeContents(swiper1);
+  })
+  .on("/swiper2", () => {
+    changeContents(swiper2);
+  })
+  .on("/swiper3", () => {
+    changeContents(swiper3);
+  })
+  .on("/login", () => {
+    changeContents(login);
+  })
+  .on("/home", () => {
+    changeContents(home);
+    changeContents2(home);
+  })
+  .on("/adidas", () => {
+    changeContents2(adidas);
+  })
 
-    }) 
-
-    // router.resolve();
-
+// router.resolve();
