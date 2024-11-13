@@ -1,3 +1,4 @@
+import { BASEURL } from "../../api/baseUrl";
 import { router } from "../../routes/router";
 
 export const loginData = async (event) => {
@@ -9,7 +10,7 @@ export const loginData = async (event) => {
   const rememberMe = document.getElementById("remember-me-checkbox").checked;
 
   try {
-    const response = await fetch("http://localhost:4000/users");
+    const response = await fetch(`${BASEURL}/users`);
     const users = await response.json();
 
     const user = users.find((user) => user.email === email);

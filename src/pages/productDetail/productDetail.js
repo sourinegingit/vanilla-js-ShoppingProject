@@ -5,11 +5,11 @@ export const productDetail = () => {
     element: "div",
     id: "productDetaildiv",
     className:
-      "w-[414px] h-[800px] absolute flex flex-col bg-white  bg-gray-200 overflow-y-hidden",
+      "w-[414px] h-[800px] p-1 absolute flex flex-col bg-white  bg-gray-200 overflow-y-hidden",
     children: [
       El({
         element: "button",
-        className: "flex items-center justify-start p-5 gap-[8px] border-black",
+        className: "flex items-center justify-start p-1 gap-[8px] border-black",
         onclick: () => {
           history.back();
         },
@@ -21,7 +21,7 @@ export const productDetail = () => {
           }),
           El({
             element: "p",
-            className: "font-xl mt-[18px]",
+            className: "text-2xl mt-[18px]",
             children: ["back"],
           }),
         ],
@@ -134,6 +134,8 @@ export const productDetail = () => {
             ],
           }),
 
+
+        //   size
           El({
             element: "div",
             className: "flex gap-32",
