@@ -1,5 +1,7 @@
 import getDataUser from "../../api/getDataUser";
 import getOneProduct from "../../api/getOneProduct";
+import { reduceCounterShoe } from "../../components/card/reduceCounterShoes";
+import totalPrice from "../../components/card/totalPrice";
 import { El } from "../../el/El";
 
 
@@ -287,9 +289,9 @@ export const productDetail = async (dataid) => {
                   element: "button",
                   className: "font-[700] text-[26px]",
                   children: [`−`],
-                  // onclick: () => {
-                  //   reducebtnshoe(data);
-                  // },
+                  onclick: () => {
+                    reduceCounterShoe(data);
+                  },
                 }),
                 El({
                   element: "p",
@@ -301,9 +303,9 @@ export const productDetail = async (dataid) => {
                   element: "button",
                   className: "font-[700] text-[26px]",
                   children: [`+`],
-                  // onclick: () => {
-                  //   totalbtnshoe(data);
-                  // },
+                  onclick: () => {
+                    totalPrice(data);
+                  },
                 }),
               ],
             }),
