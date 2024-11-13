@@ -41,7 +41,7 @@ const autoLogin = () => {
   const password = localStorage.getItem("password");
 
   if (email && password) {
-    fetch("http://localhost:4000/users")
+    fetch(`${BASEURL}/users`)
       .then((res) => res.json())
       .then((users) => {
         const user = users.find(

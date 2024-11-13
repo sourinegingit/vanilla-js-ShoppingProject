@@ -366,7 +366,7 @@ export const home = async () => {
               ],
             }),
 
-            //   stast most popular
+            //   start most popular
             El({
               element: "div",
               className: "mt-[20px] flex justify-between items-center",
@@ -391,11 +391,34 @@ export const home = async () => {
               element: "div",
               className:
                 "flex mt-[20px] gap-[12px] overflow-x-scroll scrollbar-hidden",
+                onclick: (e) => {
+                  let index = e.target;
+                  console.log(index);
+                  let buttons = [...e.target.parentNode.children];
+                  console.log(buttons);
+                  buttons.map((button) => {
+                    // console.log(button);
+                    if (button === index) {
+                      // console.log(index);
+                      index.classList.add("bg-black");
+                      index.classList.add("text-white");
+                      index.classList.add("selected-size");
+                      // console.log(index);
+                    }
+                     else if (button !== index) {
+                      // console.log(button);
+                      button.classList.remove("bg-black");
+                      button.classList.remove("text-white");
+                      button.classList.remove("selected-size");
+                    }
+                     
+                  });
+                },
               children: [
                 El({
                   element: "button",
                   className:
-                    "h-[39px] py-[10px] px-[20px] bg-gray-700 text-white rounded-full flex justify-center items-center",
+                    "h-[39px] py-[10px] px-[20px] text-gray-700 border-2 border-gray-700  rounded-full flex justify-center items-center",
                   children: ["All"],
                 }),
                 El({
@@ -403,42 +426,63 @@ export const home = async () => {
                   className:
                     "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["Nike"],
+                  onclick:()=>{
+                    router.navigate("/nike")
+                  }
                 }),
                 El({
                   element: "button",
                   className:
                     "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["Adidias"],
+                  onclick:()=>{
+                    router.navigate("/adidas")
+                  }
                 }),
                 El({
                   element: "button",
                   className:
                     "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["Puma"],
+                  onclick:()=>{
+                    router.navigate("/puma")
+                  }
                 }),
                 El({
                   element: "button",
                   className:
                     "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["Asics"],
+                  onclick:()=>{
+                    router.navigate("/asics")
+                  }
                 }),
                 El({
                   element: "button",
                   className:
                     "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["Reebok"],
+                  onclick:()=>{
+                    router.navigate("/reebok")
+                  }
                 }),
                 El({
                   element: "button",
                   className:
                     "h-[39px] px-[20px]  text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["NewBalance"],
+                  onclick:()=>{
+                    router.navigate("/newbalance")
+                  }
                 }),
                 El({
                   element: "button",
                   className:
                     "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["Converse"],
+                  onclick:()=>{
+                    router.navigate("/converse")
+                  }
                 }),
               ],
             }),

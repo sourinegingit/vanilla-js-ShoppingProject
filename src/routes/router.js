@@ -75,7 +75,9 @@ router
   }) .on("/reebok", () => {
     changeContents2(reebok);
   })
-.on("/productDetail/:id",()=>{
-  changeContents2(productDetail)
+.on("/productDetail/:id",(item)=>{
+  // console.log(item,item.data.id);
+  
+  changeContents2(productDetail,item.data.id)
 })
 // router.resolve();
