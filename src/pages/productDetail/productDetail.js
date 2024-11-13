@@ -1,7 +1,7 @@
 import getDataUser from "../../api/getDataUser";
 import getOneProduct from "../../api/getOneProduct";
 import { reduceCounterShoe } from "../../components/card/reduceCounterShoes";
-import totalPrice from "../../components/card/totalPrice";
+import { increasCounterShoes } from "../../components/card/increasCounterShoes";
 import { El } from "../../el/El";
 
 
@@ -304,7 +304,7 @@ export const productDetail = async (dataid) => {
                   className: "font-[700] text-[26px]",
                   children: [`+`],
                   onclick: () => {
-                    totalPrice(data);
+                    increasCounterShoes(data);
                   },
                 }),
               ],

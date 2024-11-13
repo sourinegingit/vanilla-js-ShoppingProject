@@ -1,16 +1,24 @@
+export const reduceCounterShoe = (data) => {
+  const counterElement = document.getElementById("counterShoe");
+  const totalElement = document.getElementById("totalPriceShoe");
 
-export const reduceCounterShoe=(data)=>{
-    const counterShoe=document.getElementById("counterShoe").firstChild.data;
-    console.log(counterShoe);
-    // const totalPriceShoe = Number(
-    //     document.getElementById("totalPriceShoe").firstChild.data.substr(2)
-    //   );
-      if (counterShoe > 1) {
-        const newcounterShoe = counterShoe - 1;
-        const newtotalPriceShoe = newcounterShoe * data.price;
-        document.getElementById("counterShoe").innerText = newcounterShoe;
-        document.getElementById("totalPriceShoe").innerText =
-          "$ " + newtotalPriceShoe;
-      }
-}
+  // Handle missing elements
+  if (!counterElement || !totalElement) {
+      console.error("Required elements not found");
+      return;
+  }
 
+  // Parse and retrieve values
+  let counterShoe = Number(counterElement.textContent);
+  const { price } = data;
+
+  // Check if counter is greater than 1
+  if (counterShoe > 1) {
+      counterShoe --;
+      const newTotalPriceShoe = counterShoe * price;
+
+      // Update elements with new values
+      counterElement.textContent = counterShoe;
+      totalElement.textContent = "$ " + newTotalPriceShoe.toFixed(2);
+  }
+};
