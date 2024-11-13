@@ -458,7 +458,8 @@ export const home = async () => {
               element: "div",
               id: `${item.id}`,
               onclick: () => {
-               router.navigate("/productDetail")
+              //  router.navigate("/productDetail")
+              router.navigate(`/productDetail/${item.id}`)
                 // productDetail({ id: item.id });
                 // Router().navigate(`/product/${item.id}`);
                 // router.navigate(`/product/${item.id}`)

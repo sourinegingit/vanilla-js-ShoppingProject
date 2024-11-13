@@ -1,6 +1,11 @@
+import getOneProduct from "../../api/getOneProduct";
 import { El } from "../../el/El";
 
-export const productDetail = () => {
+export const productDetail =async () => {
+try {
+const data=await getOneProduct();
+console.log(data);
+
   return El({
     element: "div",
     id: "productDetaildiv",
@@ -418,5 +423,10 @@ export const productDetail = () => {
       //   end
     ],
   });
+  
+} catch (error) {
+  console.log(error);
+  
+}
 };
 export default productDetail;
