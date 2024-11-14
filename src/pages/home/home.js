@@ -1,7 +1,6 @@
 import { router } from "../../routes/router";
 import getProducts from "../../api/getProducts";
 import { El } from "../../el/El";
-import productDetail from "../productDetail/productDetail";
 
 export const home = async () => {
   try {
@@ -74,9 +73,9 @@ export const home = async () => {
                 El({
                   element: "button",
                   id: "like-btn",
-                  // onclick: () => {
-                  //   Router().navigate("/wishlist");
-                  // },
+                  onclick: () => {
+                    router.navigate("/wishList");
+                  },
                   className: " flex flex-col justify-center items-center",
                   children: [
                     El({
@@ -141,8 +140,8 @@ export const home = async () => {
                             "w-[60px] h-[60px] rounded-full bg-gray-200 flex justify-center items-center",
 
                           onclick: () => {
-                              router.navigate("/nike");
-                            },
+                            router.navigate("/nike");
+                          },
 
                           children: [
                             El({
@@ -168,8 +167,8 @@ export const home = async () => {
                         El({
                           element: "button",
                           onclick: () => {
-                              router.navigate("/adidas");
-                            },
+                            router.navigate("/adidas");
+                          },
                           className:
                             "w-[60px] h-[60px] bg-gray-200 rounded-full flex justify-center items-center",
                           children: [
@@ -391,29 +390,27 @@ export const home = async () => {
               element: "div",
               className:
                 "flex mt-[20px] gap-[12px] overflow-x-scroll scrollbar-hidden",
-                onclick: (e) => {
-                  let index = e.target;
-                  console.log(index);
-                  let buttons = [...e.target.parentNode.children];
-                  console.log(buttons);
-                  buttons.map((button) => {
+              onclick: (e) => {
+                let index = e.target;
+                console.log(index);
+                let buttons = [...e.target.parentNode.children];
+                console.log(buttons);
+                buttons.map((button) => {
+                  // console.log(button);
+                  if (button === index) {
+                    // console.log(index);
+                    index.classList.add("bg-black");
+                    index.classList.add("text-white");
+                    index.classList.add("selected-size");
+                    // console.log(index);
+                  } else if (button !== index) {
                     // console.log(button);
-                    if (button === index) {
-                      // console.log(index);
-                      index.classList.add("bg-black");
-                      index.classList.add("text-white");
-                      index.classList.add("selected-size");
-                      // console.log(index);
-                    }
-                     else if (button !== index) {
-                      // console.log(button);
-                      button.classList.remove("bg-black");
-                      button.classList.remove("text-white");
-                      button.classList.remove("selected-size");
-                    }
-                     
-                  });
-                },
+                    button.classList.remove("bg-black");
+                    button.classList.remove("text-white");
+                    button.classList.remove("selected-size");
+                  }
+                });
+              },
               children: [
                 El({
                   element: "button",
@@ -426,63 +423,63 @@ export const home = async () => {
                   className:
                     "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["Nike"],
-                  onclick:()=>{
-                    router.navigate("/nike")
-                  }
+                  onclick: () => {
+                    router.navigate("/nike");
+                  },
                 }),
                 El({
                   element: "button",
                   className:
                     "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["Adidias"],
-                  onclick:()=>{
-                    router.navigate("/adidas")
-                  }
+                  onclick: () => {
+                    router.navigate("/adidas");
+                  },
                 }),
                 El({
                   element: "button",
                   className:
                     "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["Puma"],
-                  onclick:()=>{
-                    router.navigate("/puma")
-                  }
+                  onclick: () => {
+                    router.navigate("/puma");
+                  },
                 }),
                 El({
                   element: "button",
                   className:
                     "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["Asics"],
-                  onclick:()=>{
-                    router.navigate("/asics")
-                  }
+                  onclick: () => {
+                    router.navigate("/asics");
+                  },
                 }),
                 El({
                   element: "button",
                   className:
                     "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["Reebok"],
-                  onclick:()=>{
-                    router.navigate("/reebok")
-                  }
+                  onclick: () => {
+                    router.navigate("/reebok");
+                  },
                 }),
                 El({
                   element: "button",
                   className:
                     "h-[39px] px-[20px]  text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["NewBalance"],
-                  onclick:()=>{
-                    router.navigate("/newbalance")
-                  }
+                  onclick: () => {
+                    router.navigate("/newbalance");
+                  },
                 }),
                 El({
                   element: "button",
                   className:
                     "h-[39px] px-[20px] text-gray-700 border-2 border-gray-700 rounded-full flex justify-center items-center",
                   children: ["Converse"],
-                  onclick:()=>{
-                    router.navigate("/converse")
-                  }
+                  onclick: () => {
+                    router.navigate("/converse");
+                  },
                 }),
               ],
             }),
@@ -502,8 +499,8 @@ export const home = async () => {
               element: "div",
               id: `${item.id}`,
               onclick: () => {
-              //  router.navigate("/productDetail")
-              router.navigate(`/productDetail/${item.id}`)
+                //  router.navigate("/productDetail")
+                router.navigate(`/productDetail/${item.id}`);
                 // productDetail({ id: item.id });
                 // Router().navigate(`/product/${item.id}`);
                 // router.navigate(`/product/${item.id}`)

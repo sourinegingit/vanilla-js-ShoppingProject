@@ -15,7 +15,7 @@ import newbalance from "../pages/filter/newbalance";
 import puma from "../pages/filter/puma";
 import reebok from "../pages/filter/reebok";
 import productDetail from "../pages/productDetail/productDetail";
-// import productDetail from "../pages/productDetail/productDetail";
+import wishList from "../pages/wishList/wishList";
 
 export const router = new Navigo("/");
 
@@ -74,6 +74,10 @@ router
     changeContents2(puma);
   }) .on("/reebok", () => {
     changeContents2(reebok);
+  }) .on("/wishList", () => {
+    // changeContents(wishList);
+    changeContents2(wishList);
+
   })
 .on("/productDetail/:id",(item)=>{
   // console.log(item,item.data.id);

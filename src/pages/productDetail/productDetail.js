@@ -10,7 +10,7 @@ import { El } from "../../el/El";
 export const productDetail = async (dataid) => {
   try {
     const data = await getOneProduct(dataid);
-    console.log("data", data);
+    // console.log("data", data);
 
     // console.log(data);  //=> {id: 1, title: 'adidas', price: 245, order: 0, size: Array(3), …}
 
