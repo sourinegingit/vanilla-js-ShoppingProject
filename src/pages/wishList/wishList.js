@@ -16,7 +16,7 @@ export const wishList = async () => {
   return El({
     element: "div",
     id: "wishlistPage",
-    className: "w-screen h-screen flex flex-col overflow-y-hidden",
+    className: "w-[414px] h-screen flex flex-col overflow-y-hidden",
     children: [
       El({
         element: "div",
@@ -54,7 +54,7 @@ export const wishList = async () => {
         element: "div",
         id: "products-filter1",
         className:
-          "p-[24px] absolute w-full top-[80px] flex flex-wrap gap-4 overflow-y-scroll no-scrollbar",
+          "p-[24px] absolute w-[414px] top-[80px] flex flex-wrap gap-4 overflow-y-scroll no-scrollbar",
         children: data.wishlist.length > 0 
           ? data.wishlist.map((item) => {
               return El({
@@ -122,7 +122,7 @@ export const wishList = async () => {
             })
           : [El({
               element: "div",
-              className: "w-full text-center p-4",
+              className: "w-[414px] text-center p-4",
               children: "Sorry, we couldn't load your wishlist at the moment. Please try again later.",
             })],  
       }),

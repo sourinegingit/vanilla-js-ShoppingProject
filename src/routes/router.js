@@ -19,16 +19,16 @@ import wishList from "../pages/wishList/wishList";
 
 export const router = new Navigo("/");
 
-const changeContents = (target) => {
-  const root = document.getElementById("rootsEl");
+const changePage = (target) => {
+  const root = document.getElementById("rootsElement");
   root.innerHTML = "";
   root.append(target());
 };
 
-const changeContents2 = (target, item) => {
+const changePage2 = (target, item) => {
   // console.log(item);
   target(item).then((res) => {
-    const root = document.getElementById("rootsEl");
+    const root = document.getElementById("rootsElement");
     root.innerHTML = "";
     // console.log(res);
     root.append(res);
@@ -36,52 +36,52 @@ const changeContents2 = (target, item) => {
 };
 router
   .on("/", () => {
-    changeContents(starter);
+    changePage(starter);
   })
   .on("/welcome", () => {
-    changeContents(welcome);
+    changePage(welcome);
   })
   .on("/swiper1", () => {
-    changeContents(swiper1);
+    changePage(swiper1);
   })
   .on("/swiper2", () => {
-    changeContents(swiper2);
+    changePage(swiper2);
   })
   .on("/swiper3", () => {
-    changeContents(swiper3);
+    changePage(swiper3);
   })
   .on("/login", () => {
-    changeContents(login);
+    changePage(login);
   })
   .on("/home", () => {
-    changeContents(home);
-    changeContents2(home);
+    changePage(home);
+    changePage2(home);
   })
   .on("/adidas", () => {
-    changeContents2(adidas);
+    changePage2(adidas);
   })
   .on("/asics", () => {
-    changeContents2(asics);
+    changePage2(asics);
   })
   .on("/nike", () => {
-    changeContents2(nike);
+    changePage2(nike);
   })
   .on("/converse", () => {
-    changeContents2(converse);
+    changePage2(converse);
   }) .on("/newbalance", () => {
-    changeContents2(newbalance);
+    changePage2(newbalance);
   }) .on("/puma", () => {
-    changeContents2(puma);
+    changePage2(puma);
   }) .on("/reebok", () => {
-    changeContents2(reebok);
+    changePage2(reebok);
   }) .on("/wishList", () => {
-    // changeContents(wishList);
-    changeContents2(wishList);
+    // changePage(wishList);
+    changePage2(wishList);
 
   })
 .on("/productDetail/:id",(item)=>{
   // console.log(item,item.data.id);
   
-  changeContents2(productDetail,item.data.id)
+  changePage2(productDetail,item.data.id)
 })
 // router.resolve();
