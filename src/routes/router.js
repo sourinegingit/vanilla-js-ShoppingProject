@@ -16,6 +16,7 @@ import puma from "../pages/filter/puma";
 import reebok from "../pages/filter/reebok";
 import productDetail from "../pages/productDetail/productDetail";
 import wishList from "../pages/wishList/wishList";
+import search from "../pages/search/search";
 
 export const router = new Navigo("/");
 
@@ -78,6 +79,8 @@ router
     // changePage(wishList);
     changePage2(wishList);
 
+  }).on("/search", () => {
+    changePage2(search);
   })
 .on("/productDetail/:id",(item)=>{
   // console.log(item,item.data.id);

@@ -109,9 +109,9 @@ export const home = async () => {
                   placeholder: "Search",
                   className:
                     "border-none outline-none h-[37px] bg-gray-200 text-black rounded-full w-[370px] px-8",
-                  //    onkeyup: () => {
-                  //     Router().navigate("/search");
-                  //   },
+                     onkeyup: () => {
+                      router.navigate("/search");
+                    },
                 }),
                 El({
                   element: "img",

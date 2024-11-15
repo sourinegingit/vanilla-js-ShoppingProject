@@ -108,7 +108,7 @@ export const productDetail = async (dataid) => {
                           userObjclone.wishlist = updatedUser.wishlist;
                   
                           // Optionally, save the updated wishlist to localStorage
-                          localStorage.setItem("useWishlist", JSON.stringify(userObjclone));
+                          // localStorage.setItem("useWishlist", JSON.stringify(userObjclone));
                   
                           // Update the UI (example: hide the 'add to wishlist' button)
                           document.getElementById("likebtn-wishlist").classList.add("hidden");
