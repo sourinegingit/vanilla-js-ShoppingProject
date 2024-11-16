@@ -55,7 +55,8 @@ const search = async () => {
                               element: "div",
                               id: `${item.id}`,
                               onclick: () => {
-                                router.navigate(`/product/${item.id}`);
+                                router.navigate(`/productDetail/${item.id}`);
+                                
                               },
                               className: "",
                               children: [

@@ -4,18 +4,36 @@ import { reduceCounterShoe } from "../../components/card/reduceCounterShoes";
 import { increasCounterShoes } from "../../components/card/increasCounterShoes";
 import { El } from "../../el/El";
 import { AddFavorites } from "../../api/postWhishListt";
+import { router } from "../../routes/router";
+import { postproductone } from "../../api/postproductToCart";
 
 // let selectedcolor = "";
 export const productDetail = async (dataid) => {
   try {
     const data = await getOneProduct(dataid);
-    console.log("get one Product datail data", data);
+    // console.log("get one Product datail data", data);
 
-
-
-
-    
-
+    function colorGeneratore(color) {
+      switch (color) {
+        case "rose":
+          return "bg-rose-700";
+          break;
+        case "gray":
+          return "bg-gray-700";
+          break;
+        case "emerald":
+          return "bg-emerald-700";
+          break;
+        case "blue":
+          return "bg-blue-700";
+          break;
+        case "yellow":
+          return "bg-yellow-700";
+          break;
+        default:
+          break;
+      }
+    }
 
     return El({
       element: "div",
@@ -80,42 +98,52 @@ export const productDetail = async (dataid) => {
                       // Fetch the product details
                       const data = await getOneProduct(dataid);
                       console.log("Product data ", data);
-                  
+
                       // Get the current user (this would typically come from your user session or localStorage)
                       const user = await getDataUser(1); // Assuming 1 is the logged-in user ID
-                  
+
                       if (user) {
                         // Clone the user object to prevent mutating the original
                         const userObjclone = { ...user };
-                  
+
                         // Ensure that wishlist is an array, defaulting to an empty array if it's undefined
                         userObjclone.wishlist = userObjclone.wishlist || [];
-                  
+
                         console.log("User object", userObjclone);
-                  
+
                         // Check if the product is already in the wishlist
-                        const isInWishlist = userObjclone.wishlist.some((item) => item.id === data.id);
-                  console.log(isInWishlist);
-                  
+                        const isInWishlist = userObjclone.wishlist.some(
+                          (item) => item.id === data.id
+                        );
+                        console.log(isInWishlist);
+
                         if (!isInWishlist) {
                           // If the product is not in the wishlist, add it
-                          const updatedWishlist = [...userObjclone.wishlist, data]; // Create a new array with the new product
-                  
+                          const updatedWishlist = [
+                            ...userObjclone.wishlist,
+                            data,
+                          ]; // Create a new array with the new product
+
                           // Now, update the wishlist on the backend by calling AddFavorites
-                          const updatedUser = await AddFavorites(1, updatedWishlist); // Assuming user ID is 1
-                  
+                          const updatedUser = await AddFavorites(
+                            1,
+                            updatedWishlist
+                          ); // Assuming user ID is 1
+
                           // Update the local user object with the new wishlist
                           userObjclone.wishlist = updatedUser.wishlist;
-                  
+
                           // Optionally, save the updated wishlist to localStorage
                           // localStorage.setItem("useWishlist", JSON.stringify(userObjclone));
-                  
+
                           // Update the UI (example: hide the 'add to wishlist' button)
-                          document.getElementById("likebtn-wishlist").classList.add("hidden");
-                  
+                          document
+                            .getElementById("likebtn-wishlist")
+                            .classList.add("hidden");
+
                           // Optionally show a success message or update UI elements
                           console.log("Added to wishlist successfully!");
-                  
+
                           // Update the wishlist UI (this could be a separate function that you call)
                           // renderWishlist(userObjclone.wishlist);
                         } else {
@@ -126,7 +154,6 @@ export const productDetail = async (dataid) => {
                       console.error("Error while adding to wishlist:", error);
                     }
                   },
-                  
 
                   children: [
                     El({
@@ -231,13 +258,13 @@ export const productDetail = async (dataid) => {
                                   // console.log(index);
                                   index.classList.add("bg-black");
                                   index.classList.add("text-white");
-                                  // index.classList.add("selected-size");
+                                  index.classList.add("selected-size");
                                   // console.log(index);
                                 } else if (button !== index) {
                                   // console.log(button);
                                   button.classList.remove("bg-black");
                                   button.classList.remove("text-white");
-                                  // button.classList.remove("selected-size");
+                                  button.classList.remove("selected-size");
                                 }
                               });
                             },
@@ -264,10 +291,13 @@ export const productDetail = async (dataid) => {
                       className: "flex gap-2",
                       children: [
                         ...data.color.map((item) => {
-                          // console.log(item);
+                          console.log(item);
                           return El({
                             element: "button",
-                            className: `w-8 h-8 rounded-full bg-${item}-700`,
+                            value:item,
+                            className: `w-8 h-8 rounded-full ${colorGeneratore(
+                             item
+                            )}`,
                             onclick: (e) => {
                               // selectedcolor = item;
                               // console.log(selectedcolor);
@@ -281,13 +311,13 @@ export const productDetail = async (dataid) => {
                                   // console.log(index);
                                   index.classList.add("border-[3px]");
                                   index.classList.add("border-black");
-                                  index.classList.add(`${item}-color`);
+                                  index.classList.add(`selected-color`);
                                   // console.log(index);
                                 } else if (button !== index) {
                                   // console.log(button);
                                   button.classList.remove("border-[3px]");
                                   button.classList.remove("border-black");
-                                  button.classList.remove(`${item}-color`);
+                                  button.classList.remove(`selected-color`);
                                 }
                               });
                             },
@@ -371,9 +401,87 @@ export const productDetail = async (dataid) => {
               element: "button",
               className:
                 "bg-black text-white h-16 w-60 flex justify-center items-center rounded-full",
-              // onclick:()=>{
+              onclick: async () => {
+                try {
+                  // Fetch user data
+                  const res = await getDataUser(1); 
+                  const clone = res.cart || [];
 
-              // },
+                  console.log(clone);
+
+                  // Get UI values with checks for null elements
+                  const counterShoeElement =
+                    document.getElementById("counterShoe");
+                  const totalPriceShoeElement =
+                    document.getElementById("totalPriceShoe");
+                  const selectedSizeElement =
+                    document.querySelector(".selected-size");
+                  const selectedColorElement =
+                    document.querySelector(".selected-color");
+
+                  // Log each element to check which is missing
+                  console.log("counterShoe:", counterShoeElement);
+                  console.log("totalPriceShoe:", totalPriceShoeElement);
+                  console.log("selectedSizeElement:", selectedSizeElement);
+                  console.log("selectedColorElement:", selectedColorElement);
+
+                  if (
+                    !counterShoeElement ||
+                    !totalPriceShoeElement ||
+                    !selectedSizeElement ||
+                    !selectedColorElement
+                  ) {
+                    throw new Error(
+                      "One or more required DOM elements are missing."
+                    );
+                  }
+
+                  let quantity = Number(
+                    counterShoeElement.firstChild.data || 0
+                  ); // Fallback to 0 if no data is available
+                  let totalPr = Number(
+                    totalPriceShoeElement.firstChild.data.substr(2) || 0
+                  ); // Fallback to 0 if no data
+                  let sizeselect = Number(
+                    selectedSizeElement.firstChild.data || 0
+                  ); // Fallback to 0 if no data
+                  let selectedcolor =
+                    selectedColorElement.value; // Fallback to "default" if no color selected
+
+                  // Find the existing product in the cart
+                  const previousOrder = clone.find(
+                    (item) => item.id === data.id
+                  );
+
+                  if (previousOrder) {
+                    // If the product already exists in the cart, update its quantity and total price
+                    clone.forEach((item) => {
+                      if (item.id === previousOrder.id) {
+                        item.quantity += quantity;
+                        item.totalPr += totalPr;
+                        item.sizeselect = sizeselect;
+                        item.colorselect = selectedcolor;
+                      }
+                    });
+                  } else {
+                    // If the product does not exist in the cart, add it
+                    data.sizeselect = sizeselect;
+                    data.colorselect = selectedcolor;
+                    data.quantity = quantity;
+                    data.totalPr = totalPr;
+                    clone.push(data);
+                  }
+
+                  // Update the cart in the backend
+                  await postproductone(1, clone);
+
+                  // Redirect to home page
+                  router.navigate("/home");
+                } catch (error) {
+                  console.error("Error while processing the cart:", error);
+                }
+              },
+
               children: [`Add to Cart`],
             }),
           ],

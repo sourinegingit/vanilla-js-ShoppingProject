@@ -11,7 +11,7 @@ export const home = async () => {
       element: "div",
       id: "home",
       className:
-        "w-[414px]  h-[82px] flex flex-col items-center justify-center overflow-y-hidden scrollbar-hidden",
+        "w-[414px]  h-[82px] mx-auto flex flex-col items-center justify-center overflow-y-hidden scrollbar-hidden",
       children: [
         // header name
         El({
@@ -380,7 +380,7 @@ export const home = async () => {
                   className: "font-[600] text-[16px]",
                   children: ["See All"],
                   // onclick: () => {
-                  //   Router().navigate("/seeall");
+                  //   router.navigate("/seeall");
                   // },
                 }),
               ],
@@ -489,6 +489,7 @@ export const home = async () => {
         }),
 
         //   products
+        
         El({
           element: "div",
           id: "products-home",
@@ -499,11 +500,8 @@ export const home = async () => {
               element: "div",
               id: `${item.id}`,
               onclick: () => {
-                //  router.navigate("/productDetail")
                 router.navigate(`/productDetail/${item.id}`);
-                // productDetail({ id: item.id });
-                // Router().navigate(`/product/${item.id}`);
-                // router.navigate(`/product/${item.id}`)
+                
               },
               className: "",
               children: [
@@ -629,7 +627,7 @@ export const home = async () => {
               id: "cart-btn",
               className: " flex flex-col justify-center items-center",
               onclick: () => {
-                Router().navigate("/cart");
+              router.navigate("/cart");
               },
               children: [
                 El({
@@ -649,7 +647,7 @@ export const home = async () => {
               id: "orders-btn",
               className: " flex flex-col justify-center items-center",
               onclick: () => {
-                Router().navigate("/orders");
+                router.navigate("/orders");
               },
               children: [
                 El({
@@ -669,7 +667,7 @@ export const home = async () => {
               id: "Wallet-btn",
               className: " flex flex-col justify-center items-center",
               onclick: () => {
-                Router().navigate("/wallet");
+                router.navigate("/wallet");
               },
               children: [
                 El({
@@ -689,7 +687,7 @@ export const home = async () => {
               id: "profile-btn",
               className: " flex flex-col justify-center items-center",
               onclick: () => {
-                Router().navigate("/profile");
+              router.navigate("/profile");
               },
               children: [
                 El({

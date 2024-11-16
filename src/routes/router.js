@@ -17,6 +17,7 @@ import reebok from "../pages/filter/reebok";
 import productDetail from "../pages/productDetail/productDetail";
 import wishList from "../pages/wishList/wishList";
 import search from "../pages/search/search";
+import cart from "../pages/cart/cart";
 
 export const router = new Navigo("/");
 
@@ -69,22 +70,29 @@ router
   })
   .on("/converse", () => {
     changePage2(converse);
-  }) .on("/newbalance", () => {
+  })
+  .on("/newbalance", () => {
     changePage2(newbalance);
-  }) .on("/puma", () => {
+  })
+  .on("/puma", () => {
     changePage2(puma);
-  }) .on("/reebok", () => {
+  })
+  .on("/reebok", () => {
     changePage2(reebok);
-  }) .on("/wishList", () => {
+  })
+  .on("/wishList", () => {
     // changePage(wishList);
     changePage2(wishList);
-
-  }).on("/search", () => {
+  })
+  .on("/search", () => {
     changePage2(search);
   })
-.on("/productDetail/:id",(item)=>{
-  // console.log(item,item.data.id);
-  
-  changePage2(productDetail,item.data.id)
-})
+  .on("/cart", () => {
+    changePage2(cart);
+  })
+  .on("/productDetail/:id", (item) => {
+    // console.log(item,item.data.id);
+
+    changePage2(productDetail, item.data.id);
+  });
 // router.resolve();
