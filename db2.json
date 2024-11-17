@@ -85,8 +85,8 @@
           "images": "http://localhost:5173/products/adidas/1.webp",
           "sizeselect": 41,
           "colorselect": "rose",
-          "quantity": 4,
-          "totalPr": 980
+          "quantity": 8,
+          "totalPr": 1960
         },
         {
           "id": 7,
@@ -110,6 +110,29 @@
           "colorselect": "teal",
           "quantity": 2,
           "totalPr": 166
+        },
+        {
+          "id": 9,
+          "title": "asics",
+          "price": 56,
+          "order": 0,
+          "size": [
+            44,
+            42,
+            40
+          ],
+          "color": [
+            "rose",
+            "emerald",
+            "teal",
+            "gray"
+          ],
+          "brand": "asics",
+          "images": "http://localhost:5173/products/asics/1.webp",
+          "sizeselect": 42,
+          "colorselect": "rose",
+          "quantity": 2,
+          "totalPr": 112
         }
       ]
     }

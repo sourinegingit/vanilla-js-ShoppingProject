@@ -291,7 +291,7 @@ export const productDetail = async (dataid) => {
                       className: "flex gap-2",
                       children: [
                         ...data.color.map((item) => {
-                          console.log(item);
+                          // console.log(item);
                           return El({
                             element: "button",
                             value:item,

@@ -7,17 +7,17 @@ import { router } from "../../routes/router";
 
 const cart = async () => {
   try {
-    const data = await cartdata(); debugger  
+    const data = await cartdata();   
     if (!data || !data.cart) {
       console.error('Cart data is missing.');
       return;
     }
 
-    console.log(data.cart);
+    // console.log(data.cart);
     // console.log(data);
-    setTimeout(() => {
-        totalCart(data);
-      }, 0);
+    // setTimeout(() => {
+    //     totalCart(data);
+    //   }, 0);
       console.log(data.cart);
     return El({
       element: "div",

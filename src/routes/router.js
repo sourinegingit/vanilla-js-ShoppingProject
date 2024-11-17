@@ -18,6 +18,10 @@ import productDetail from "../pages/productDetail/productDetail";
 import wishList from "../pages/wishList/wishList";
 import search from "../pages/search/search";
 import cart from "../pages/cart/cart";
+import checkout from "../pages/checkout/checkout";
+import shippingAddress from "../pages/addressCart/shippingAddress";
+import shippingType from "../pages/addressCart/shippingType";
+import Payment from "../pages/payment/payment";
 
 export const router = new Navigo("/");
 
@@ -89,6 +93,18 @@ router
   })
   .on("/cart", () => {
     changePage2(cart);
+  })
+  .on("/checkout", () => {
+    changePage2(checkout);
+  })
+  .on("/shippingAddress", () => {
+    changePage(shippingAddress);
+  })
+  .on("/shippingType", () => {
+    changePage(shippingType);
+  })
+  .on("/paymentMethod", () => {
+    changePage2(Payment);
   })
   .on("/productDetail/:id", (item) => {
     // console.log(item,item.data.id);
