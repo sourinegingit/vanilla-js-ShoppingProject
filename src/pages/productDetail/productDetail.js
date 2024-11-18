@@ -24,8 +24,8 @@ export const productDetail = async (dataid) => {
         case "emerald":
           return "bg-emerald-700";
           break;
-        case "blue":
-          return "bg-blue-700";
+        case "teal":
+          return "bg-teal-700";
           break;
         case "yellow":
           return "bg-yellow-700";
@@ -68,8 +68,8 @@ export const productDetail = async (dataid) => {
           children: [
             El({
               element: "img",
-              className: "w-full  h-full object-contain border-b  border-black",
-              src: `${data.title}`,
+              className: "w-[414px]  h-full object-contain border-b  border-black",
+              src: `${data.images}`,
             }),
           ],
         }),
@@ -95,27 +95,22 @@ export const productDetail = async (dataid) => {
                   // wishlist
                   onclick: async () => {
                     try {
-                      // Fetch the product details
                       const data = await getOneProduct(dataid);
-                      console.log("Product data ", data);
+                      // console.log("Product data ", data);
 
-                      // Get the current user (this would typically come from your user session or localStorage)
-                      const user = await getDataUser(1); // Assuming 1 is the logged-in user ID
-
+                      const user = await getDataUser(1);
                       if (user) {
-                        // Clone the user object to prevent mutating the original
                         const userObjclone = { ...user };
 
-                        // Ensure that wishlist is an array, defaulting to an empty array if it's undefined
                         userObjclone.wishlist = userObjclone.wishlist || [];
 
-                        console.log("User object", userObjclone);
+                        // console.log("User object", userObjclone);
 
                         // Check if the product is already in the wishlist
                         const isInWishlist = userObjclone.wishlist.some(
                           (item) => item.id === data.id
                         );
-                        console.log(isInWishlist);
+                        // console.log(isInWishlist);
 
                         if (!isInWishlist) {
                           // If the product is not in the wishlist, add it
@@ -124,7 +119,6 @@ export const productDetail = async (dataid) => {
                             data,
                           ]; // Create a new array with the new product
 
-                          // Now, update the wishlist on the backend by calling AddFavorites
                           const updatedUser = await AddFavorites(
                             1,
                             updatedWishlist
@@ -393,7 +387,7 @@ export const productDetail = async (dataid) => {
                   element: "p",
                   id: "totalPriceShoe",
                   className: "font-[700] text-[28px]",
-                  children: ["1600"],
+                  children: [`$ ${data.price.toFixed(2)}`],
                 }),
               ],
             }),

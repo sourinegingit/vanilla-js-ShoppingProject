@@ -392,22 +392,22 @@ export const home = async () => {
                 "flex mt-[20px] gap-[12px] overflow-x-scroll scrollbar-hidden",
               onclick: (e) => {
                 let index = e.target;
-                console.log(index);
+                // console.log("index",index);
                 let buttons = [...e.target.parentNode.children];
-                console.log(buttons);
+                // console.log(buttons);
                 buttons.map((button) => {
-                  // console.log(button);
+                  console.log(button);
                   if (button === index) {
                     // console.log(index);
                     index.classList.add("bg-black");
                     index.classList.add("text-white");
-                    index.classList.add("selected-size");
+                    
                     // console.log(index);
                   } else if (button !== index) {
                     // console.log(button);
                     button.classList.remove("bg-black");
                     button.classList.remove("text-white");
-                    button.classList.remove("selected-size");
+                   
                   }
                 });
               },
@@ -494,7 +494,7 @@ export const home = async () => {
           element: "div",
           id: "products-home",
           className:
-            "p-[14px] bg-gray-400 absolute w-[414px] top-[480px] flex flex-wrap justify-center gap-4 overflow-y-scroll no-scrollbar ",
+            "p-[14px] bg-gray-400  absolute w-[414px] top-[480px] flex flex-wrap justify-center gap-4 overflow-y-scroll no-scrollbar ",
           children: data.map((item) => {
             return El({
               element: "div",

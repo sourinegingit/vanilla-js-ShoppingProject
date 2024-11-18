@@ -1,6 +1,6 @@
 import { BASEURL } from "./baseUrl";
-export const AddFavorites = async (id, data) => {
-  console.log("Updating wishlist for user id", id, "with new wishlist", data);
+export const AddFavorites = async (id, updatedWishlist) => {
+  console.log("Updating wishlist for user id", id, "with new wishlist", updatedWishlist);
 
   // Fetch the current user to get all their existing data
   const response = await fetch(`${BASEURL}/users/${id}`);
@@ -13,14 +13,14 @@ export const AddFavorites = async (id, data) => {
   // Now, update only the wishlist, leaving other user data intact
   const updatedUser = {
     ...user, // Copy all user data
-    wishlist: data, // Update the wishlist with the new data
+    wishlist: updatedWishlist, // Update the wishlist with the new data
   };
 
   // Send the updated user object back to the backend
   const updateResponse = await fetch(`${BASEURL}/users/${id}`, {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(updatedUser), // Send the whole user object, including updated wishlist
   });

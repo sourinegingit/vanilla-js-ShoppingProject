@@ -107,7 +107,7 @@ router
     changePage2(Payment);
   })
   .on("/productDetail/:id", (item) => {
-    // console.log(item,item.data.id);
+    // console.log(item);
 
     changePage2(productDetail, item.data.id);
   });
