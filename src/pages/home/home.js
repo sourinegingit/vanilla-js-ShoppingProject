@@ -1,9 +1,11 @@
 import { router } from "../../routes/router";
 import getProducts from "../../api/getProducts";
 import { El } from "../../el/El";
+import getDataUser from "../../api/getDataUser";
 
 export const home = async () => {
   try {
+    const user=await getDataUser(1); 
     const data = await getProducts(); // directly get products without destructuring
     // console.log(data);
 
@@ -48,7 +50,7 @@ export const home = async () => {
                     El({
                       element: "p",
                       className: "font-[700] text-[16px]",
-                      children: ["NEGIN SOURI"],
+                      children: [`${user.name} `],
                     }),
                   ],
                 }),
@@ -548,7 +550,7 @@ export const home = async () => {
         //       id: "2",
         //       // onclick: () => {
         //       //   // productModal({ id: item.id });
-        //       //   Router().navigate(`/product/${item.id}`);
+        //       //   router.navigate(`/product/${item.id}`);
         //       // },
         //       className: "",
         //       children: [

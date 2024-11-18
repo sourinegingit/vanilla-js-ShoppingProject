@@ -2,29 +2,10 @@
   "users": [
     {
       "id": 1,
-      "name": "negin",
+      "name": "NEGIN SOURI",
       "email": "negin@gmail.com",
       "password": "negin",
       "wishlist": [
-        {
-          "id": 2,
-          "title": "adidas",
-          "price": 145,
-          "order": 0,
-          "size": [
-            44,
-            42,
-            40
-          ],
-          "color": [
-            "rose",
-            "emerald",
-            "teal",
-            "gray"
-          ],
-          "brand": "adidas",
-          "images": "http://localhost:5173/products/adidas/2.webp"
-        },
         {
           "id": 1,
           "title": "adidas",
@@ -45,14 +26,71 @@
           "images": "http://localhost:5173/products/adidas/1.webp"
         },
         {
-          "id": 4,
-          "title": "adidas",
-          "price": 223,
+          "id": 44,
+          "title": "puma",
+          "price": 310,
           "order": 0,
           "size": [
             44,
             42,
-            39
+            40
+          ],
+          "color": [
+            "rose",
+            "emerald",
+            "teal",
+            "gray"
+          ],
+          "brand": "puma",
+          "images": "http://localhost:5173/products/puma/4.webp"
+        },
+        {
+          "id": 9,
+          "title": "asics",
+          "price": 56,
+          "order": 0,
+          "size": [
+            44,
+            42,
+            40
+          ],
+          "color": [
+            "rose",
+            "emerald",
+            "teal",
+            "gray"
+          ],
+          "brand": "asics",
+          "images": "http://localhost:5173/products/asics/1.webp"
+        },
+        {
+          "id": 3,
+          "title": "adidas",
+          "price": 110,
+          "order": 0,
+          "size": [
+            44,
+            43,
+            40
+          ],
+          "color": [
+            "red",
+            "emerald",
+            "teal",
+            "gray"
+          ],
+          "brand": "adidas",
+          "images": "http://localhost:5173/products/adidas/3.webp"
+        },
+        {
+          "id": 6,
+          "title": "adidas",
+          "price": 45,
+          "order": 0,
+          "size": [
+            44,
+            42,
+            40
           ],
           "color": [
             "rose",
@@ -61,7 +99,7 @@
             "gray"
           ],
           "brand": "adidas",
-          "images": "http://localhost:5173/products/adidas/4.webp"
+          "images": "http://localhost:5173/products/adidas/6.webp"
         }
       ],
       "cart": [
@@ -83,56 +121,10 @@
           ],
           "brand": "adidas",
           "images": "http://localhost:5173/products/adidas/1.webp",
-          "sizeselect": 41,
-          "colorselect": "rose",
-          "quantity": 8,
-          "totalPr": 1960
-        },
-        {
-          "id": 7,
-          "title": "adidas",
-          "price": 83,
-          "order": 0,
-          "size": [
-            44,
-            42,
-            40
-          ],
-          "color": [
-            "rose",
-            "emerald",
-            "teal",
-            "gray"
-          ],
-          "brand": "adidas",
-          "images": "http://localhost:5173/products/adidas/7.webp",
-          "sizeselect": 42,
-          "colorselect": "teal",
+          "sizeselect": 40,
+          "colorselect": "emerald",
           "quantity": 2,
-          "totalPr": 166
-        },
-        {
-          "id": 9,
-          "title": "asics",
-          "price": 56,
-          "order": 0,
-          "size": [
-            44,
-            42,
-            40
-          ],
-          "color": [
-            "rose",
-            "emerald",
-            "teal",
-            "gray"
-          ],
-          "brand": "asics",
-          "images": "http://localhost:5173/products/asics/1.webp",
-          "sizeselect": 42,
-          "colorselect": "rose",
-          "quantity": 2,
-          "totalPr": 112
+          "totalPr": 490
         }
       ]
     }

@@ -13,12 +13,7 @@ const cart = async () => {
       return;
     }
 
-    // console.log(data.cart);
-    // console.log(data);
-    // setTimeout(() => {
-    //     totalCart(data);
-    //   }, 0);
-      console.log(data.cart);
+      // console.log(data.cart);
     return El({
       element: "div",
       id: "cart",
@@ -250,7 +245,10 @@ const cart = async () => {
                   element: "p",
                   id: "totalPriceCartPage",
                   className: "font-[700] text-[24px]",
-                  children: ["$ 00"],
+                  children: [
+                    "$",
+                    data.cart.reduce((acc, item) => item.totalPr + acc, 0),
+                  ],
                 }),
               ],
             }),

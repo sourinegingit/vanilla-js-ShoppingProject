@@ -10,9 +10,8 @@ export const AddFavorites = async (id, updatedWishlist) => {
   }
   const user = await response.json();
 
-  // Now, update only the wishlist, leaving other user data intact
   const updatedUser = {
-    ...user, // Copy all user data
+    ...user, 
     wishlist: updatedWishlist, // Update the wishlist with the new data
   };
 

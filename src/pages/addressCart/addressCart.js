@@ -4,7 +4,7 @@ const addressCart = (
   addressName,
   defaultSpan,
   variableItem,
-  addressLogo = "location",
+  // addressLogo = "location",
   price = ""
 ) => {
   return El({

@@ -96,7 +96,7 @@ export const productDetail = async (dataid) => {
                   onclick: async () => {
                     try {
                       const data = await getOneProduct(dataid);
-                      // console.log("Product data ", data);
+                      console.log("Product data ", data);
 
                       const user = await getDataUser(1);
                       if (user) {
@@ -107,7 +107,7 @@ export const productDetail = async (dataid) => {
                         // console.log("User object", userObjclone);
 
                         // Check if the product is already in the wishlist
-                        const isInWishlist = userObjclone.wishlist.some(
+                        const isInWishlist = userObjclone.wishlist.find(
                           (item) => item.id === data.id
                         );
                         // console.log(isInWishlist);
@@ -391,6 +391,9 @@ export const productDetail = async (dataid) => {
                 }),
               ],
             }),
+
+
+            // add to cart
             El({
               element: "button",
               className:
@@ -414,10 +417,10 @@ export const productDetail = async (dataid) => {
                     document.querySelector(".selected-color");
 
                   // Log each element to check which is missing
-                  console.log("counterShoe:", counterShoeElement);
-                  console.log("totalPriceShoe:", totalPriceShoeElement);
-                  console.log("selectedSizeElement:", selectedSizeElement);
-                  console.log("selectedColorElement:", selectedColorElement);
+                  // console.log("counterShoe:", counterShoeElement);
+                  // console.log("totalPriceShoe:", totalPriceShoeElement);
+                  // console.log("selectedSizeElement:", selectedSizeElement);
+                  // console.log("selectedColorElement:", selectedColorElement);
 
                   if (
                     !counterShoeElement ||
